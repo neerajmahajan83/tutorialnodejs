@@ -99,9 +99,75 @@ const http = require('http')   //imports the HTTP module to create a server.
 ## 9. What is V8 engine in Node.js?
 The V8 engine in Node.js is an open-source JavaScript engine developed by Google, written in C++. It is the same engine that powers Google Chrome. In Node.js, the V8 engine:
 
-Compiles JavaScript to native machine code instead of interpreting it, making execution very fast.
-Manages memory and garbagecollection, ensuring efficient use of system resources.
-Provides the core runtime for executing JavaScript outside the browser, which Node.js then extends with additional APIs (like file system, networking, etc.).
+-- Compiles JavaScript to native machine code instead of interpreting it, making execution very fast.
+
+-- Manages memory and garbagecollection, ensuring efficient use of system resources.
+
+-- Provides the core runtime for executing JavaScript outside the browser, which Node.js then extends with additional APIs (like file system, networking, etc.).
+
+
+
+## 10. How to handle environment variables in NodeJS?
+We use process.env to handle environment variables in NodeJS. We can specify environment configurations as well as keys in the .env file. To access the variable in the application, we use the “process.env.VARIABLE_NAME” syntax.
+
+To use it we have to install the dotenv package using the below command:
+
+## npm install dotenv
+## Use .env file with dotenv:
+require('dotenv').config();
+const port = process.env.PORT || 3000;
+
+
+## 11. What is control flow in NodeJS?
+In Node.js, control flow refers to the order in which asynchronous operations (like file reads, API calls, DB queries) are executed and how their results are handled.
+
+Because, Node.js is non-blocking and event-driven, tasks don’t always finish in the order they start. Control flow ensures they are managed correctly.
+
+
+## 12. What do you mean by event loop in NodeJS?
+The event loop in NodeJS is a mechanism that allows it to handle multiple asynchronous tasks concurrently within a single thread. It continuously listens for events and executes associated callback functions.
+
+## example
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout callback");
+}, 0);
+
+console.log("End");
+
+## 13. What is the order in which control flow statements get executed?
+The order in which the statements are executed is as follows:
+
+Execution and queue handling
+Collection of data and storing it
+Handling concurrency
+Executing the next lines of code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
