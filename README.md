@@ -139,16 +139,101 @@ console.log("End");
 ## 13. What is the order in which control flow statements get executed?
 The order in which the statements are executed is as follows:
 
-Execution and queue handling
-Collection of data and storing it
-Handling concurrency
-Executing the next lines of code
+-- Execution and queue handling
+-- Collection of data and storing it
+-- Handling concurrency
+-- Executing the next lines of code
+
+## 14. What are the main disadvantages of NodeJS?
+Here are some main disadvantages of NodeJS listed below:
+
+-- Single-threaded nature: It may not fully utilize multi-core CPUs, limiting performance.
+
+-- NoSQL preference: Relational databases like MySQL aren't commonly used.
+
+-- Rapid API changes: Frequent updates can introduce instability and compatibility issues.
+
+## 15. What is REPL in NodeJS?
+REPL in NodeJS stands for Read, Evaluate, Print, and Loop. It is a computer environment similar to the shell which is useful for writing and debugging code as it executes the code in on go.
+
+-- Read: It reads the input provided by the user (JavaScript expressions or commands).
+
+-- Eval: It evaluates the input (executes the code).
+
+-- Print: It prints the result of the evaluation to the console.
+
+-- Loop: It loops back, allowing you to enter more code and get immediate results.
 
 
+## 16. How to import a module in NodeJS?
+We use the require module to import the External libraries in NodeJS. The result returned by require() is stored in a variable, which is used to invoke the functions using the dot notation.
+
+You can import modules in two ways:
+
+## CommonJS (default):
+const fs = require('fs');      // Built-in module
+const add = require('./math'); // Custom module
+
+## ES Modules (modern):
+import fs from 'fs';
+import { add } from './math.js';
+
+## difference between NodeJS and Angular?
+
+Node.js	
+-- Node.js is a server-side runtime environment used to execute JavaScript outside the browser.
+-- It is mainly used for backend development such as APIs, servers, and database communication.	
+-- Node.js runs on the server to handle client requests and responses.
+-- It uses JavaScript for backend logic and server-side operations.	
 
 
+Angular
+	-- Angular is a front-end framework used to build dynamic and interactive user interfaces.
+  -- It is mainly used for frontend development to create responsive single-page applications (SPAs).
+	-- Angular runs in the browser to manage the user interface.
+  -- It primarily uses TypeScript for building structured frontend applications.
 
 
+## 18. What is package.json in NodeJS?
+package.json in NodeJS is a metadata file that contains project-specific information such as dependencies, scripts, version, author details, and other configuration settings required for managing and building the project.
+
+## Example:
+
+{
+    "name": "app",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "express": "^4.21.2"
+    }
+}
+
+
+## 19. How to create the simple HTTP server in NodeJS?
+You can create a simple HTTP server in NodeJS using the built-in http module:
+
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello, World!');
+});
+server.listen(3000, () => {
+  console.log('Server is running at http://localhost:3000/');
+});
+
+## 20. What are the most commonly used libraries in NodeJS?
+There are the two most commonly used libraries in NodeJs:
+
+ExpressJS: ExpressJS is a minimal and flexible web application framework for building robust APIs and web apps. It simplifies routing, middleware handling, and request/response management.
+Mongoose: An Object Data Modeling (ODM) library for MongoDB and NodeJS, it helps in managing data relationships, schema validation, and business logic.
 
 
 
