@@ -430,3 +430,100 @@ The Test Pyramid is a strategy for structuring tests in a software project to en
 
 ## 43. What is piping in NodeJS?
 In NodeJS, piping refers to the process of passing the output of one stream directly into another stream. It allows data to flow through multiple streams without needing to store it in memory or temporarily write it to disk. This is a common pattern used in file handling, HTTP requests, and other I/O operations in NodeJS.
+
+
+## 44. What is a cluster in NodeJS?
+Due to a single thread in NodeJS, it handles memory more efficiently because there are no multiple threads due to which no thread management is needed. Now, to handle workload efficiently and to take advantage of computer multi-core systems, cluster modules are created that provide us the way to make child processes that run simultaneously with a single parent process.
+
+
+## 45. Explain some of the cluster methods in NodeJS
+Fork(): It creates a new child process from the master. The isMaster returns true if the current process is master or else false.
+isWorker: It returns true if the current process is a worker or else false.
+process: It returns the child process which is global.
+send(): It sends a message from worker to master or vice versa. 
+kill(): It is used to kill the current worker.
+
+## 46. How to manage sessions in NodeJS?
+Session management can be done in NodeJS by using the express-session module. It helps in saving the data in the key-value form. In this module, the session data is not saved in the cookie itself, just the session ID.
+
+## 47. How many types of API functions are there in Node.js?
+There are two types of API functions:
+
+Asynchronous, non-blocking functions - mostly I/O operations which can be fork out of the main loop.
+Synchronous, blocking functions - mostly operations that influence the process running in the main loop.
+
+## 48. How can we implement authentication and authorization in NodeJS?
+Authentication is the process of verifying a user’s identity, while Authorization determines what actions or resources that user is allowed to access. 
+In Node.js, these can be implemented using packages such as Passport (for strategies like OAuth, Google, GitHub, etc.) and JWT(jsonwebtoken) for token-based authentication and role-based authorization.
+
+
+## 49. Explain the packages used for file uploading in NodeJS.the
+The package used for file uploading in NodeJS is Multer. The file can be uploaded to the server using this module. There are other modules in the market but Multer is very popular when it comes to file uploading. Multer is a NodeJS middleware that is used for handling multipart/form-data, which is a mostly used library for uploading files.
+
+
+
+## 50. How to Connect NodeJS to a MongoDB Database?
+To connect to the MongoDB database write the following code after installing the Mongoose package:
+
+
+const mongoose = require("mongoose");
+
+mongoose.connect("DATABASE_URL_HERE", {
+   useNewUrlParser: true,
+   useUnifiedTopology: true
+});
+
+## 51. How to read command line arguments in NodeJS?
+
+Step 1: Save a file as index.js and paste the below code inside the file.
+
+let arguments = process.argv ; 
+  
+console.log(arguments) ;
+let arguments = process.argv ; 
+  
+console.log(arguments) ;
+Step 2: Run the index.js file using the below command:
+
+node index.js 
+
+
+## 52. Explain the NodeJS Redis module.
+Redis is an Open Source store for storing data structures. It is used in multiple ways. It is used as a database, cache, and message broker. It can store data structures such as strings, hashes, sets, sorted sets, bitmaps, indexes, and streams. Redis is very useful for NodeJS developers as it reduces the cache size which makes the application more efficient. However, it is very easy to integrate Redis with NodeJS applications.
+
+
+## 53. What is web socket?
+Web Socket is a protocol that provides full-duplex (multiway) communication i.e. allows communication in both directions simultaneously. Web Socket is a modern web technology in which there is a continuous connection between the user’s browser (client) and the server. In this type of communication, between the web server and the web browser, both of them can send messages to each other at any point in time.
+
+
+## 54. Explain the util module in NodeJS
+The Util module in NodeJS provides access to various utility functions. There are various utility modules available in the NodeJS module library.
+
+OS Module: Operating System-based utility modules for NodeJS are provided by the OS module. 
+Path Module: The path module in NodeJS is used for transforming and handling various file paths. 
+DNS Module: DNS Module enables us to use the underlying Operating System name resolution functionalities. The actual DNS lookup is also performed by the DNS Module. 
+Net Module: Net Module in NodeJS is used for the creation of both client and server. Similar to DNS Module this module also provides an asynchronous network wrapper.
+
+
+## 56. Explain DNS module in NodeJS
+DNS is a node module used to do name resolution facility which is provided by the operating system as well as used to do an actual DNS lookup. Its main advantage is that there is no need for memorizing IP addresses – DNS servers provide a nifty solution for converting domain or subdomain names to IP addresses.
+
+## 57. What is the difference between setImmediate() and setTimeout()?
+# steImmediate()
+Executes the callback immediately after the current event loop phase.
+Adds the callback to the next iteration of the event loop, in the check phase.
+Has no timer; it is designed for immediate execution.
+No delay, always executes after the current phase finishes.
+Used for callbacks that need to run immediately after I/O events or timers.
+# setTimeout()
+Executes the callback after the specified delay (in ms).
+Adds the callback to the timer queue, to be executed after the specified delay.
+Executes only after the specified delay, which may vary slightly based on system timing resolution.
+Executes after the specified delay (minimum of 1 ms).
+Used for delaying the execution of a callback by a specific time.
+
+## 58. What is an Event Emitter in Node.js?
+In Node.js, an Event Emitter is a class that allows objects to emit events and register listeners (callbacks) to handle those events. It is part of the events module and is commonly used to handle asynchronous events and to implement an observer pattern, where an object (the emitter) triggers events, and other objects (listeners) respond to those events.
+
+ 
+
