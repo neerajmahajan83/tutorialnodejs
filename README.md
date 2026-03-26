@@ -319,3 +319,114 @@ callback: The function to be executed repeatedly.
 delay: The time in milliseconds between each execution.
 [arg1, arg2, ...]: Optional arguments that can be passed to the callback function.
 
+
+## 30. Difference between setImmediate() and process.nextTick() methods
+setImmediate()	
+--**Executes callback in the check phase of the event loop**
+--**Runs after I/O events**
+--**Scheduled to run on the next iteration of the event loop**	
+--**Lower priority than nextTick**
+--**Does not block I/O operations**
+--**Used when you want to run code after I/O tasks**
+
+process.nextTick()
+--**Executes callback in the next tick queue**
+--**Runs before I/O events**
+--**Runs immediately after the current operation completes**
+--**Higher priority than setImmediate**
+--**Can block I/O if overused**
+--**Used for immediate execution after current function**
+
+
+## 31. What are the different types of HTTP requests?
+The different types of HTTP requests are mentioned below:
+
+# GET: Retrieve data.
+# POST: Create new resource.
+# PUT: Update an entire resource.
+# PATCH: Partially update a resource.
+# DELETE: Remove a resource.
+
+
+## 32. What is the difference between spawn() and fork() method?
+
+# spawn()	
+-Used to run any system command	
+
+-Executes external programs	
+
+-Does not create communication channel by default	
+
+-Suitable for running large processes	
+
+-Returns a stream for data handling	
+
+-Used for general process execution	
+
+# fork()
+-Used specifically to create new Node.js processes
+
+-Executes another JavaScript file
+
+-Creates built-in communication channel (IPC)
+
+-Suitable for Node-to-Node communication
+
+-Returns an object with messaging support
+
+-Used for creating child Node.js modules
+
+
+
+## 33. Explain the use of the passport module in NodeJS
+The passport module is used for adding authentication features to our website or web app. It implements authentication measure which helps to perform sign-in operations.
+
+
+## 34. What is a, fork in NodeJS?
+Fork is a method in NodeJS that is used to create child processes. It helps to handle the increasing workload. It creates a new instance of the engine which enables multiple processes to run the code.
+
+
+## 35. What are the three methods to avoid callback hell?
+The three methods to avoid callback hell are:
+
+Using async/await()
+Using promises
+Using generators
+
+36. What is a .body-parser in NodeJS?
+Body-parser is the NodeJS body-parsing middleware. It is responsible for parsing the incoming request bodies in a middleware before you handle it. It is an NPM module that processes data sent in HTTP requests.
+
+
+## 36. What is a .body-parser in NodeJS?
+Body-parser is the NodeJS body-parsing middleware. It is responsible for parsing the incoming request bodies in a middleware before you handle it. It is an NPM module that processes data sent in HTTP requests.
+
+## 37. What is CORS in NodeJS?
+The word CORS stands for “Cross-Origin Resource Sharing”. Cross-Origin Resource Sharing is an HTTP-header based mechanism implemented by the browser which allows a server or an API to indicate any origins (different in terms of protocol, hostname, or port) other than its origin from which the unknown origin gets permission to access and load resources. The cors package available in the npm registry is used to tackle CORS errors in a NodeJS application.
+
+## 38. Explain the tls module in NodeJS..
+The tls module provides an implementation of the Transport Layer Security (TLS) and Secure Socket Layer (SSL) protocols that are built on top of OpenSSL. It helps to establish a secure connection on the network.
+
+## 39. Can you access DOM in Node?
+No, you cannot access the DOM in NodeJS because NodeJS is a server-side environment, while the DOM (Document Object Model) is a client-side concept used in browsers to interact with HTML and XML documents.
+
+NodeJS runs on the server and does not have access to a browser's DOM, which is part of the browser's environment. The DOM allows you to manipulate the content and structure of web pages, but it is not available in NodeJS, as it operates on the backend, outside the context of a web page or browser.
+
+## 40. How do you manage packages in your NodeJS project?
+In a NodeJS project, package management is handled through npm (Node Package Manager), which is the default package manager for NodeJS, which allows you to install and manage third-party packages and create and publish your packages. 
+
+## 41. What is the purpose of NODE_ENV?
+The NODE_ENV environment variable in NodeJS is used to specify the environment in which the NodeJS application is running. It helps in distinguishing between different stages of the application's lifecycle, such as development, testing, or production, and allows you to customize the behavior of the application based on that environment.
+
+## 42. What is a test pyramid in NodeJS?
+The Test Pyramid is a strategy for structuring tests in a software project to ensure efficiency, maintainability, and good coverage. It consists of three levels:
+
+# Unit Tests (Base): Test individual components or functions in isolation. These tests are fast and numerous. Example: Testing a single function like add(1, 2).
+
+# Integration Tests (Middle): Test interactions between components to ensure they work together. These are slower than unit tests but cover more functionality. Example: Testing API routes to ensure they connect properly with the database.
+
+# End-to-End Tests (Top): Test the entire application flow from the user interface to the backend. These are slow and fewer in number. Example: Simulating user login and navigating the application.
+
+
+
+## 43. What is piping in NodeJS?
+In NodeJS, piping refers to the process of passing the output of one stream directly into another stream. It allows data to flow through multiple streams without needing to store it in memory or temporarily write it to disk. This is a common pattern used in file handling, HTTP requests, and other I/O operations in NodeJS.
