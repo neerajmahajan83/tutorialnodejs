@@ -63,7 +63,7 @@ Here are some reasons why NodeJS is preferred:
 
 ## 6. What is the difference between Synchronous and Asynchronous functions?
 
-## Aynchronous Functions                           	
+## Synchronous Functions                           	
 -- Blocks the execution until the task completes.	  
 
 -- Executes tasks sequentially; each task must be completed before the next one starts.	
@@ -236,23 +236,86 @@ ExpressJS: ExpressJS is a minimal and flexible web application framework for bui
 Mongoose: An Object Data Modeling (ODM) library for MongoDB and NodeJS, it helps in managing data relationships, schema validation, and business logic.
 
 
+## 21. What are promises in NodeJS?
+A promise is an advancement of callbacks in NodeJS. In other words, a promise is a JavaScript object that is used to handle all the asynchronous data operations. While developing an application, you may encounter that you are using a lot of nested callback functions, which causes a problem of callback hell. Promises solve this problem of callback hell.\
 
 
+## 22. How do you install, update, and delete a dependency?
+-Install the Dependencies
+-- npm install express
+
+-NodeJS Update the Dependencies
+-- npm update 
+
+-NodeJS Delete the Dependencies
+-- npm uninstall express
+
+## 23. Which command used to import external libraries?
+In NodeJS, you can import external libraries (also known as packages) using the require() function. This allows you to include modules or packages that you have installed via npm (Node Package Manager).
+
+-- const express = require('express');
 
 
+## 24. What is event-driven programming in NodeJS?
+Event-driven programming is used to synchronize the occurrence of multiple events and to make the program as simple as possible. The basic components of an Event-Driven Program are:
+
+A callback function ( called an event handler) is called when an event is triggered.
+An event loop that listens for event triggers and calls the corresponding event handler for that event.
+
+## 25. What is a buffer in NodeJS?
+The Buffer class in NodeJS is used to perform operations on raw binary data. Generally, Buffer refers to the particular memory location in memory. Buffer and array have some similarities, but the difference is that array can be any type, and it can be resizable. Buffers only deal with binary data, and it can not be resizable. Each integer in a buffer represents a byte. console.log() function is used to print the Buffer instance.
+
+## 26. What are streams in NodeJS?
+In NodeJS, streams are a powerful way to handle data in chunks rather than loading the entire data into memory. Streams allow for the efficient processing of large volumes of data, especially in situations where the data size is too large to fit into memory all at once.
+
+-- There are four types of the Streams:
+
+# Readable Streams: These streams allow you to read data. For example, reading data from a file or receiving HTTP request data. Example:
+fs.createReadStream() or http.IncomingMessage.
+# Writable Streams: These streams allow you to write data. For example, writing data to a file or sending HTTP response data. Example:
+ fs.createWriteStream() or http.ServerResponse.
+ 
+# Duplex Streams: These are both readable and writable. You can both read and write data using the same stream. Example: A TCP socket.
+
+# Transform Streams: These are a type of duplex stream where the data is transformed as it is read and written. Example: A zlib stream to compress or decompress data.
+
+## 27. Explain the crypto module in NodeJS.
+The crypto module is used for encrypting, decrypting, or hashing any type of data. This encryption and decryption basically help to secure and add a layer of authentication to the data. The main use case of the crypto module is to convert the plain readable text to an encrypted format and decrypt it when required.
+
+## 27. Explain the crypto module in NodeJS.
+The crypto module is used for encrypting, decrypting, or hashing any type of data. This encryption and decryption basically help to secure and add a layer of authentication to the data. The main use case of the crypto module is to convert the plain readable text to an encrypted format and decrypt it when required.
+
+## 28. What is callback hell?
+Callback hell is an issue caused by a nested callback. This causes the code to look like a pyramid and makes it unable to read To overcome this situation, we use promises.
+
+## 29. Explain the use of the timers module in NodeJS.
+The Timers module in NodeJS contains various functions that allow us to execute a block of code or a function after a set period. The Timers module is global, we do not need to use require() to import it. 
+
+It has the following methods:
+# 1. setTimeout() method
+
+The setTimeout() function is used to execute a function once after a specified delay (in milliseconds).
+
+setTimeout(callback, delay, [arg1, arg2, ...]);
+callback: The function to be executed after the delay.
+delay: The time in milliseconds after which the function is executed.
+[arg1, arg2, ...]: Optional arguments that can be passed to the callback function.
 
 
+# 2. setImmediate() method
 
+The setImmediate() function is used to execute a callback function immediately after the current event loop cycle, i.e., after the I/O events in the NodeJS event loop have been processed. It is similar to setTimeout() with a delay of 0 milliseconds, but it differs in terms of when the function is executed.
 
+setImmediate(callback, [arg1, arg2, ...]);
+callback: The function to be executed.
+[arg1, arg2, ...]: Optional arguments to pass to the callback function.
 
+# 3. setInterval() method
 
+The setInterval() function is used to execute a function repeatedly, with a fixed time delay between each call.
 
-
-
-
-
-
-
-
-
+setInterval(callback, delay, [arg1, arg2, ...]);
+callback: The function to be executed repeatedly.
+delay: The time in milliseconds between each execution.
+[arg1, arg2, ...]: Optional arguments that can be passed to the callback function.
 
