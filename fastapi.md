@@ -212,4 +212,139 @@ class User(BaseModel):
 Background tasks allow you to run functions after returning a response, useful for operations that don’t need to complete before returning the response.
         
 
+# Use Cases:
 
+-Sending emails
+
+-Processing files
+
+-Logging
+
+-Cache warming
+
+
+## 17. WebSocket Purpose in FastAPI
+WebSockets enable bidirectional, real-time communication between client and server.
+
+# Use Cases:
+
+-Chat applications
+
+-Live notifications
+
+-Real-time dashboards
+
+-Gaming applications
+
+-Live data feeds
+
+
+## 18. Implementing WebSockets
+from fastapi import WebSocket, WebSocketDisconnect
+
+
+## 19. OAuth2 and JWT Authentication Support
+FastAPI provides built-in support for OAuth2 with JWT tokens:
+
+from fastapi import Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from jose import JWTError, jwt
+from passlib.context import CryptContext
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+SECRET_KEY = "your-secret-key"
+ALGORITHM = "HS256"
+def create_access_token(data: dict):
+    return jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
+async def get_current_user(token: str = Depends(oauth2_scheme)):
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username: str = payload.get("sub")
+        if username is None:
+            raise HTTPException(status_code=401, detail="Invalid token")
+        return username
+    except JWTError:
+        raise HTTPException(status_code=401, detail="Invalid token")
+@app.get("/protected")
+async def protected_route(current_user: str = Depends(get_current_user)):
+    return {"user": current_user}
+
+
+## 20. Securing FastAPI Applications
+Authentication Methods:
+JWT tokens
+OAuth2
+API keys
+Basic authentication
+
+
+
+## 21. Benefits of Using FastAPI with Docker
+Consistent Environment: Same environment across development, testing, and production
+Easy Deployment: Containerized applications are easier to deploy
+Scalability: Easy horizontal scaling with container orchestration
+Isolation: Dependencies are isolated within containers
+Portability: Runs anywhere Docker is supported
+
+FROM python:3.9
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+
+## 22. Deploying to Cloud Platforms
+AWS Deployment Options:
+AWS Lambda (serverless)
+AWS ECS/EKS (containerized)
+AWS Elastic Beanstalk (platform-as-a-service)
+AWS EC2 (virtual machines)
+
+
+
+## 23. Testing Support
+FastAPI provides excellent testing support with TestClient:
+
+from fastapi.testclient import TestClient
+from main import app
+client = TestClient(app)
+def test_read_main():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"Hello": "World"}
+def test_create_item():
+
+
+## Code Organization:
+app/
+├── main.py
+├── models/
+│   ├── __init__.py
+│   └── user.py
+├── routers/
+│   ├── __init__.py
+│   ├── users.py
+│   └── items.py
+├── dependencies/
+│   ├── __init__.py
+│   └── auth.py
+└── tests/
+    ├── __init__.py
+    └── test_main.py
+
+
+
+## Interview Tips
+-Practice Code Examples: Be ready to write basic FastAPI code on a whiteboard or computer
+
+-Understand Async: Be prepared to explain when and why to use async/await
+
+-Know the Ecosystem: Understand how FastAPI fits with other Python tools (SQLAlchemy, Alembic, etc.)
+
+-Real-world Experience: Prepare examples of how you’ve used or would use FastAPI in real projects
+
+-Compare with Other Frameworks: Be ready to discuss trade-offs between FastAPI and other frameworks
+
+-Security Awareness: Understand common web security concerns and how FastAPI addresses them
