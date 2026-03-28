@@ -184,3 +184,32 @@ app.add_middleware(
 -Example: /users?skip=0&limit=10 → skip and limit are query parameters
 
 
+## 13. Pydantic in FastAPI
+Pydantic is a Python library that provides data validation and settings management using Python type annotations.
+
+Usage in FastAPI:
+
+- Request body validation
+- Response model definition
+- Configuration management
+- Data serialization/deserialization
+
+from pydantic import BaseModel, validator
+from typing import Optional
+class User(BaseModel):
+    name: str
+    email: str
+    age: Optional[int] = None
+    
+    @validator('email')
+    def email_must_contain_at(cls, v):
+        if '@' not in v:
+            raise ValueError('Invalid email')
+        return v
+
+
+## 15. Background Tasks
+Background tasks allow you to run functions after returning a response, useful for operations that don’t need to complete before returning the response.
+        
+
+
