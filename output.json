@@ -1,0 +1,10 @@
+{
+  "lines": [
+    "Sample Line 1: Node.js Program",
+    "Sample Line 2: Reading Files",
+    "Sample Line 3: Converting to JSON",
+    "Sample Line 4: Successfully!"
+  ],
+  "totalLines": 4,
+  "content": "Sample Line 1: Node.js Program\nSample Line 2: Reading Files\nSample Line 3: Converting to JSON\nSample Line 4: Successfully!\n"
+}

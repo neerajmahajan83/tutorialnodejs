@@ -1,0 +1,26 @@
+[
+  {
+    "name": "John Doe",
+    "age": "25",
+    "city": "New York",
+    "country": "USA"
+  },
+  {
+    "name": "Jane Smith",
+    "age": "30",
+    "city": "London",
+    "country": "UK"
+  },
+  {
+    "name": "Bob Johnson",
+    "age": "35",
+    "city": "Tokyo",
+    "country": "Japan"
+  },
+  {
+    "name": "Alice Williams",
+    "age": "28",
+    "city": "Paris",
+    "country": "France"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "file-to-json",
+  "version": "1.0.0",
+  "description": "Node.js program to read data from file and store in JSON format",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node example.js"
+  },
+  "keywords": ["nodejs", "file-reading", "json", "conversion"],
+  "author": "",
+  "license": "ISC"
+}
