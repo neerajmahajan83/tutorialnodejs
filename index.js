@@ -162,8 +162,10 @@ async function main() {
   console.log('Result:', JSON.stringify(asyncResult, null, 2));
 }
 
-// Run main function
-main();
+// Run main function only if this file is executed directly
+if (require.main === module) {
+  main();
+}
 
 // Export functions for use as a module
 module.exports = {

@@ -5,9 +5,27 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node example.js"
+    "demo": "node example.js",
+    "test": "mocha",
+    "test:watch": "mocha --watch",
+    "test:verbose": "mocha --reporter tap",
+    "test:coverage": "nyc mocha",
+    "test:viewer": "node test-viewer-server.js"
   },
-  "keywords": ["nodejs", "file-reading", "json", "conversion"],
+  "keywords": [
+    "nodejs",
+    "file-reading",
+    "json",
+    "conversion"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.22.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.8.2",
+    "nyc": "^15.1.0"
+  }
 }
